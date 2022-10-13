@@ -1,0 +1,11 @@
+install mongodb from mongodb.com
+install mongodb compass from mongodb.com compass
+Winodws > got advance system settings > enviroment variables > system variables 
+select path > edit > add "C:\Program Files\MongoDB\Server\6.0\bin"
+press ok > ok > ok
+restart terminal 
+type "mongod"
+you get some error of db path not not defined or something 
+so continue on terminal and write
+"md c:\data\db" press enter
+now again type mongod on terminal and it will work
