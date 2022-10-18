@@ -29,7 +29,13 @@ async function createCourse() {
 
 // ---- Get Data -----
 async function getCourses() {
-    const courses = await Course.find({ author: 'Aliyan', isPubished: true}).limit(10).sort({ name: 1 }).select({ name: 1, tags: 1                                                                                                                                                                                                                                });
+    const courses = await Course
+    // .find({ author: 'Aliyan', isPubished: true})
+    // .find({ price: { $gt: 10, $lt: 20 }})
+    .find({ price: { $in: [10, 15, 20] }})
+    .limit(10)
+    .sort({ name: 1 })
+    .select({ name: 1, tags: 1 });
     console.log('Courses from Database: ', courses);
 }
 
