@@ -24,7 +24,7 @@ async function createCourse() {
         isPubished: true,
     });   
     const result = await course.save();
-    console.log('Result of Create: ', result);
+    console.log('Result of Create:', result);
 }
 
 createCourse();
