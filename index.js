@@ -31,8 +31,20 @@ async function createCourse() {
 async function getCourses() {
     const courses = await Course
     // .find({ author: 'Aliyan', isPubished: true})
+    //  -------- comparison operator --------
     // .find({ price: { $gt: 10, $lt: 20 }})
-    .find({ price: { $in: [10, 15, 20] }})
+    // .find({ price: { $in: [10, 15, 20] }})
+    // ------ Locgical operator -----
+    // .find()
+    // .or([ { author: 'Aliyan' }, { isPubished: true }])
+    // --------- Regular Expression ----
+    // ----- Aliyan in start of the string ----
+    // .find({ author: /^Aliyan/ })
+    //  ----- Search Ansari in end of the string -------   
+    // ----- i for insensitive string ---
+    // .find({ author: /Ansari$/i})
+    // ------- Contains Aliyan ------
+    .find({ author: /.*Aliyan.*/i})
     .limit(10)
     .sort({ name: 1 })
     .select({ name: 1, tags: 1 });
