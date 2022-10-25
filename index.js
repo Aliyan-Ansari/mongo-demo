@@ -52,7 +52,7 @@ async function getCourses() {
     .sort({ name: 1 })
     // .count()
     .select({ name: 1, tags: 1 });
-    console.log('Courses from Database: ', courses);
+    console.log('--Courses from Database: ', courses);
 }
 
 getCourses();
